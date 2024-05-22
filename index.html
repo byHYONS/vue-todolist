@@ -31,10 +31,14 @@
                         <li> 
                             <div class="item"
                             v-for="(items, index) in todoList">
-                                <p> {{items.text}} </p>
+                                <p :class="{'task-done': items.done }"> 
+                                    {{items.text}} 
+                                </p>
                                 <div class="btns">
-                                    <button class="btn done">Done</button>
-                                    <button class="btn delete">Del Task</button>
+                                    <button class="btn done"
+                                    @click="setTaskDone(index)">Done</button>
+                                    <button class="btn delete"
+                                    @click="setDeleteTask(index)">Del Task</button>
                                 </div>
                             </div>
                         </li>

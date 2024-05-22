@@ -26,10 +26,18 @@ createApp({
     data() {
        return {
          todoList,
+         deleteTask: false,
          currentList: null,
        }
     },
     methods: {
+        setTaskDone(index){
+            this.todoList[index].done = !this.todoList[index].done
+        },
+        setDeleteTask(index){
+            console.log(this.value);
+            this.todoList.splice(index, 1);
+        }
         
     },
 }).mount('#app');

@@ -50,6 +50,11 @@ img, .text-logo {vertical-align: middle;}
     margin-bottom: 15px;
 }
 
+.task-done {
+    text-decoration: line-through;
+    color: green;
+}
+
 .item > p {
     display: block;
     width: 80%;
