@@ -2,7 +2,7 @@
 * {box-sizing: border-box; margin: 0; padding: 0; user-select: none;}
 img {max-width: 100%;height: auto;}
 body {background-color: rgb(220, 231, 236); font-family: Verdana, Geneva, Tahoma, sans-serif;}
-
+[v-cloak] {display: none;}
 
 /* -------------------------
         header
@@ -27,49 +27,127 @@ img {
 img, .text-logo {vertical-align: middle;}
 
 /* -------------------------
-        MAIN • BOTTONI
+            MAIN 
 -------------------------- */
-.button.container {
-    margin-top: 30px;
+.container_add-task {
+    margin: 10px auto;
     border-radius: 3px;
+    width: 900px; 
+    background-color: white;
+    padding: 30px;
 }
 
 .container {
+    margin: 25px auto 10px; 
     width: 900px; 
-    margin: 0 auto; 
     background-color: white;
 }
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.item > p {
+    display: block;
+    width: 80%;
+    background-color: rgb(245, 238, 238);
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 1px 3px 10px rgba(104, 104, 104, 0.2);
+}
+
+.btns button:first-of-type {
+    margin-right: 10px;
+}
+
+.btns button.btn {
+    background-color: transparent;
+    border: unset;
+    padding: 6px 12px;
+    color: inherit;
+    border-radius: 5px;
+}
+
+.btns button.done {
+    color: rgb(70, 173, 242);;
+    border: 2px solid rgb(70, 173, 242);
+    cursor: pointer;
+}
+
+.btns button.delete {
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+    cursor: pointer;
+}
+
+button.done:hover {
+    border: 2px solid rgb(70, 173, 242);
+    background-color: rgb(70, 173, 242);
+    color: white; 
+}
+
+button.delete:hover {opacity: 0.5;}
 
 .add-task a {
     color: white;
     text-decoration: none;
     font-size: 0.8em;
 }
-.add-section a {
-    color: rgb(201, 206, 212);
+.add-delete a {
+    color: rgb(205, 89, 89);
     text-decoration: none;
     font-size: 0.8em;
 }
 
-.add-task, .add-section {
+.add-task, .add-delete {
     height: 70%;
     margin: 15px 0;
-    padding: 5px 15px;
+    padding: 8px 15px;
     display: inline-block;
     border-radius: 5px;
 }
 
 .add-task {
     border: 2px solid rgb(70, 173, 242);
-    margin-left: 30px;
     background-color: rgb(70, 173, 242);
     color: white;
 }
 
-.add-section {
+.add-task:hover {opacity: 0.7;}
+
+.add-delete {
     margin-left: 10px;
-    color: rgb(201, 206, 212);
-    border: 2px solid rgb(201, 206, 212);
+    background-color: #fff;
+    color: rgb(205, 89, 89);
+    border: 2px solid rgb(205, 89, 89);
+}
+
+.add-delete:hover {
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+}
+
+.textarea label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+
+}
+
+.textarea textarea {
+    outline: none;
+    width: 100%;
+    border: none;
+    margin: 20px 0;
+    background-color: rgb(245, 238, 238);
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 1px 3px 10px rgba(104, 104, 104, 0.2);
 }
 
 /* -------------------------
@@ -78,10 +156,9 @@ img, .text-logo {vertical-align: middle;}
 .container .todo-list {
     margin-top: 5px;
     padding: 30px;
-    margin-bottom: 20px;
 }
 
-li.title {
+h3.title {
     margin-top: 30px;
     font-size: 1.3em;
     font-weight: 600;
@@ -90,7 +167,7 @@ li.title {
 ul {
     margin-bottom: 35px;
     list-style-type: none ;
-    margin-left: 30px;
+    
 }
 
 li {
@@ -98,41 +175,4 @@ li {
 
 }
 
-.green, .red {
-    vertical-align: middle;
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 50%;
-}
-
-.green {
-    color: lightgreen;
-    border: 1px solid lightgreen;
-    
-}
-.red {
-    color: lightcoral;
-    border: 1px solid lightcoral;
-}
-
-.tag {
-    padding: 5px 10px;
-    color: white;
-    border-radius: 10px;
-}
-
-/*  BOX TAG COLORATI */
-.editorial {background-color: rgb(68, 171, 235);}
-
-.goals {background-color: rgb(157, 115, 230);}
-
-.recruiting {background-color: rgb(99, 191, 168);}
-
-.mobile {background-color: rgb(242, 159, 63);}
-
-.website {background-color: rgb(217, 100, 162);}
-
-.sales {background-color: rgb(176, 201, 60);}
+/* fine */
