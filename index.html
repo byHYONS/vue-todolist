@@ -29,12 +29,15 @@
                     <h3 class="title">&#9662; Todo List</h3>
                     <ul>
                         <li> 
-                            <div class="item"
+                            <!-- aggiungo la lista todo con vuejs -->
+                            <div class="item" 
                             v-for="(items, index) in todoList">
+                                <!-- interpolo il testo dell'array e cambio la classe in base al cliccare del bottone done -->
                                 <p :class="{'task-done': items.done }"> 
                                     {{items.text}} 
                                 </p>
                                 <div class="btns">
+                                    <!-- vado in ascolto dei bottoni -->
                                     <button class="btn done"
                                     @click="setTaskDone(index)">Done</button>
                                     <button class="btn delete"
@@ -48,15 +51,18 @@
             </div>
             <div class="container_add-task">
                 <div class="textarea">
+                    <!-- textArea -->
                     <label for="add-task">Add Task:</label>
                     <textarea name="add-task" id="add-task" rows="5"
                     v-model="textArea"
                     @keypress.enter="setAddTask()"></textarea>
                 </div>
+                <!-- aggiungo all'array il contenuto della textArea tramite bottone e tasto tastiera enter -->
                 <button class="add-task"
                 @click="setAddTask()">Add Task</button>
+                <!-- rimuovo il contenuto dalla textArea -->
                 <button class="add-delete"
-                @click="setClearArea()">Add Task</button>
+                @click="setClearArea()">Cancel</button>
             </div>
         </div>
     </main>

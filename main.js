@@ -20,39 +20,43 @@ const todoList = [
     },
 ];
 
-const keyEnter = addEventListener('keypress', function(e) {
-    console.log(e.key);
-    
-    return e.key;
-});
 
-
+/* *************************
+    inizializzo oggetto
+           vuejs
+************************* */
 
 const {createApp} = Vue;
 
 createApp({
     data() {
        return {
-         todoList,
-         textArea: '',
+         todoList, // array di oggetti
+         textArea: '', // campo testo 
        }
     },
     methods: {
+        // cliccando sul bottone done cambio il valore di done per aggiungere o rimuovere la classe task-done:
         setTaskDone(index){
             this.todoList[index].done = !this.todoList[index].done
         },
+        // cliccando sul bottone delete cancello l'0ggetto nella posizione dell'indice:
         setDeleteTask(index){
             console.log(this.value);
             this.todoList.splice(index, 1);
         },
+        // aggiungo il toto all'array permendo il bottone adTask e premendo il tasto enter dalla tastiera:
         setAddTask(){
             console.log(this.textArea);
-            this.todoList.push({
-                text: this.textArea,
-                done: null,
-            })
+            if (typeof this.textArea === 'string' && /\S/.test(this.textArea)){
+                this.todoList.push({
+                    text: this.textArea,
+                    done: null,
+                });
+            };
             this.textArea = '';
         },
+        // cancello la textArea cliccando sul bottone Cancel:
         setClearArea(){
             console.log('cancello il contenuto');
             this.textArea = '';
@@ -62,3 +66,7 @@ createApp({
 }).mount('#app');
 
 console.log(todoList);
+
+/* *************************
+           FINE
+************************* */
