@@ -49,10 +49,14 @@
             <div class="container_add-task">
                 <div class="textarea">
                     <label for="add-task">Add Task:</label>
-                    <textarea name="add-task" id="add-task" rows="5"></textarea>
+                    <textarea name="add-task" id="add-task" rows="5"
+                    v-model="textArea"
+                    @keypress.enter="setAddTask()"></textarea>
                 </div>
-                <button class="add-task">Add Task</button>
-                <button class="add-delete">Add Task</button>
+                <button class="add-task"
+                @click="setAddTask()">Add Task</button>
+                <button class="add-delete"
+                @click="setClearArea()">Add Task</button>
             </div>
         </div>
     </main>

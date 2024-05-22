@@ -20,14 +20,21 @@ const todoList = [
     },
 ];
 
+const keyEnter = addEventListener('keypress', function(e) {
+    console.log(e.key);
+    
+    return e.key;
+});
+
+
+
 const {createApp} = Vue;
 
 createApp({
     data() {
        return {
          todoList,
-         deleteTask: false,
-         currentList: null,
+         textArea: '',
        }
     },
     methods: {
@@ -37,7 +44,21 @@ createApp({
         setDeleteTask(index){
             console.log(this.value);
             this.todoList.splice(index, 1);
+        },
+        setAddTask(){
+            console.log(this.textArea);
+            this.todoList.push({
+                text: this.textArea,
+                done: null,
+            })
+            this.textArea = '';
+        },
+        setClearArea(){
+            console.log('cancello il contenuto');
+            this.textArea = '';
         }
         
     },
 }).mount('#app');
+
+console.log(todoList);
