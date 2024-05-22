@@ -1,0 +1,138 @@
+/*     ----- RESET -----      */
+* {box-sizing: border-box; margin: 0; padding: 0; user-select: none;}
+img {max-width: 100%;height: auto;}
+body {background-color: rgb(220, 231, 236); font-family: Verdana, Geneva, Tahoma, sans-serif;}
+
+
+/* -------------------------
+        header
+-------------------------- */
+
+.logo {
+    padding: 15px 30px 15px 30px;
+    height: 90px;
+    background-color: white;
+}
+
+img {
+    height: 100%;
+}
+
+.text-logo {
+    margin-left: 10px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+img, .text-logo {vertical-align: middle;}
+
+/* -------------------------
+        MAIN • BOTTONI
+-------------------------- */
+.button.container {
+    margin-top: 30px;
+    border-radius: 3px;
+}
+
+.container {
+    width: 900px; 
+    margin: 0 auto; 
+    background-color: white;
+}
+
+.add-task a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+.add-section a {
+    color: rgb(201, 206, 212);
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+.add-task, .add-section {
+    height: 70%;
+    margin: 15px 0;
+    padding: 5px 15px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.add-task {
+    border: 2px solid rgb(70, 173, 242);
+    margin-left: 30px;
+    background-color: rgb(70, 173, 242);
+    color: white;
+}
+
+.add-section {
+    margin-left: 10px;
+    color: rgb(201, 206, 212);
+    border: 2px solid rgb(201, 206, 212);
+}
+
+/* -------------------------
+        TODO LIST
+-------------------------- */
+.container .todo-list {
+    margin-top: 5px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+li.title {
+    margin-top: 30px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+ul {
+    margin-bottom: 35px;
+    list-style-type: none ;
+    margin-left: 30px;
+}
+
+li {
+    margin-top: 20px;
+
+}
+
+.green, .red {
+    vertical-align: middle;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.green {
+    color: lightgreen;
+    border: 1px solid lightgreen;
+    
+}
+.red {
+    color: lightcoral;
+    border: 1px solid lightcoral;
+}
+
+.tag {
+    padding: 5px 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+/*  BOX TAG COLORATI */
+.editorial {background-color: rgb(68, 171, 235);}
+
+.goals {background-color: rgb(157, 115, 230);}
+
+.recruiting {background-color: rgb(99, 191, 168);}
+
+.mobile {background-color: rgb(242, 159, 63);}
+
+.website {background-color: rgb(217, 100, 162);}
+
+.sales {background-color: rgb(176, 201, 60);}
