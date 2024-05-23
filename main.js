@@ -32,7 +32,8 @@ createApp({
     data() {
        return {
          todoList, // array di oggetti
-         textArea: '', // campo testo 
+         textArea: '', // campo testo
+         searchTask: '', 
        }
     },
     methods: {
@@ -48,13 +49,24 @@ createApp({
         // aggiungo il toto all'array permendo il bottone adTask e premendo il tasto enter dalla tastiera:
         setAddTask(){
             console.log(this.textArea);
+            // if(!this.textArea) return
             if (typeof this.textArea === 'string' && /\S/.test(this.textArea)){
                 this.todoList.push({
-                    text: this.textArea,
+                    text: this.textArea.trim(),
                     done: null,
                 });
             };
             this.textArea = '';
+        },
+        // per effettuare la ricerca definisco la funzione, che poi verrà anche ciclata per creare sul dom la lista:
+        listTask(){
+            if (this.searchTask) {
+                return this.todoList.filter(element => {
+                    return element.text.includes(this.searchTask);
+                    });
+                } else {
+                return this.todoList;
+                }
         },
         // cancello la textArea cliccando sul bottone Cancel:
         setClearArea(){

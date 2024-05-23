@@ -26,12 +26,19 @@
             <div class="container">
                 <!-- NEW TASK LIST-->
                 <div class="todo-list">
-                    <h3 class="title">&#9662; Todo List</h3>
+                    <div class="top-bar">
+                        <h3 class="title">&#9662; Todo List</h3>
+                        <div class="search-item">
+                            <label for="search"><i class="fab fa-sistrix"></i></label>
+                            <input type="text" id="search"
+                            v-model="searchTask">
+                        </div>                
+                    </div>
                     <ul>
                         <li> 
-                            <!-- aggiungo la lista todo con vuejs -->
+                            <!-- aggiungo la lista todo con vuejs ciclando da metodo -->
                             <div class="item" 
-                            v-for="(items, index) in todoList">
+                            v-for="(items, index) in listTask()">
                                 <!-- interpolo il testo dell'array e cambio la classe in base al cliccare del bottone done -->
                                 <p :class="{'task-done': items.done }"> 
                                     {{items.text}} 
